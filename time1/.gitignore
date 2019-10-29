@@ -38,12 +38,8 @@ npm-debug.log
 
 # Standard elixir gitignore and a generally good idea
 /config/*.secret.exs
-#Potential issue with this not happening
-/config/prod.secret.exs
 
-# Has postgres user info
+
 # Need to update on both ends
-/config/dev.exs
-/config/test.exs
 /config/config.exs
 prod-env.sh
