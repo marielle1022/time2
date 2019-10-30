@@ -31,7 +31,9 @@ npm-debug.log
 # Since we are building assets from assets/,
 # we ignore priv/static. You may want to comment
 # this depending on your deployment strategy.
+# Also commented out copy-static
 /priv/static/
+/priv/copy_static/
 
 # Standard elixir gitignore
 *.beam
