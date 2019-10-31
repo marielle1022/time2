@@ -101,4 +101,12 @@ defmodule Time1.Users do
   def change_user(%User{} = user) do
     User.changeset(user, %{})
   end
+
+  @doc """
+  Helper function
+  Citation: Nat's Notes on the Lens app
+  """
+  def get_user_by_name(name) do
+    Repo.get_by(User, name: name)
+  end
 end
