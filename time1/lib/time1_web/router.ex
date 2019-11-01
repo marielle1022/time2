@@ -21,6 +21,8 @@ defmodule Time1Web.Router do
 
     get "/", PageController, :index
     resources "/users", UserController
+    resources "/timesheets", TimesheetController
+    # get "/timesheets/:id/show", TimesheetController, :show
     resources "/sessions", SessionController, only: [:new, :create, :delete], singleton: true
     # singleton: true means each user only sees one session
   end
