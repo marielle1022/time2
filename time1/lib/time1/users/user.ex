@@ -22,7 +22,6 @@ defmodule Time1.Users.User do
     user
     |> cast(attrs, [:username, :name, :role, :manager, :password, :password_confirmation])
     |> validate_confirmation(:password)
-    # Checks if password is too short
     |> validate_length(:password, min: 8)
     |> hash_password()
     |> validate_required([:username, :name, :password_hash])
