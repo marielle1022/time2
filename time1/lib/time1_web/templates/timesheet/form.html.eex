@@ -6,61 +6,61 @@
   <% end %>
 
   <div class="form-group">
-    <%= label f, :sheetname %>
+    <%= label f, "Date" %>
     <%= text_input f, :sheetname, class: "form-control" %>
     <%= error_tag f, :sheetname %>
   </div>
 
   <div class="form-group">
-    <%= label f, :task1 %>
+    <%= label f, "Task" %>
     <%= text_input f, :task1, class: "form-control" %>
     <%= error_tag f, :task1 %>
   </div>
 
   <div class="form-group">
-    <%= label f, :task2 %>
+    <%= label f, "Task" %>
     <%= text_input f, :task2, class: "form-control" %>
     <%= error_tag f, :task2 %>
   </div>
 
   <div class="form-group">
-    <%= label f, :task3 %>
+    <%= label f, "Task" %>
     <%= text_input f, :task3, class: "form-control" %>
     <%= error_tag f, :task3 %>
   </div>
 
   <div class="form-group">
-    <%= label f, :task4 %>
+    <%= label f, "Task" %>
     <%= text_input f, :task4, class: "form-control" %>
     <%= error_tag f, :task4 %>
   </div>
 
   <div class="form-group">
-    <%= label f, :task5 %>
+    <%= label f, "Task" %>
     <%= text_input f, :task5, class: "form-control" %>
     <%= error_tag f, :task5 %>
   </div>
 
   <div class="form-group">
-    <%= label f, :task6 %>
+    <%= label f, "Task" %>
     <%= text_input f, :task6, class: "form-control" %>
     <%= error_tag f, :task6 %>
   </div>
 
   <div class="form-group">
-    <%= label f, :task7 %>
+    <%= label f, "Task" %>
     <%= text_input f, :task7, class: "form-control" %>
     <%= error_tag f, :task7 %>
   </div>
 
   <div class="form-group">
-    <%= label f, :task8 %>
+    <%= label f, "Task" %>
     <%= text_input f, :task8, class: "form-control" %>
     <%= error_tag f, :task8 %>
   </div>
 
   <div class="form-group">
-    <%= label f, :numhours %>
+    <%= label f, "Total Number of Hours" %>
     <%= number_input f, :numhours, class: "form-control" %>
     <%= error_tag f, :numhours %>
   </div>
