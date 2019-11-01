@@ -1,3 +1,8 @@
+alias Time1.Repo
+alias Time1.Users.User
+
+Repo.insert!(%User{name: "Alice", username: "Alice1995", role: "worker", manager: "Bobbi"})
+Repo.insert!(%User{name: "Bobbi", username: "Bobbi2000", role: "manager"})
 # Script for populating the database. You can run it as:
 #
 #     mix run priv/repo/seeds.exs

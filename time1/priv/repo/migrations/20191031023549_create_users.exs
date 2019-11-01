@@ -3,6 +3,7 @@ defmodule Time1.Repo.Migrations.CreateUsers do
 
   def change do
     create table(:users) do
+      add :username, :string, null: false
       add :name, :string, null: false
       add :role, :string, null: false
       add :manager, :string

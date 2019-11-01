@@ -1,5 +1,9 @@
 defmodule Time1.Users do
   @moduledoc """
+  Much taken from Nat's Notes on Lens application
+  """
+
+  @moduledoc """
   The Users context.
   """
 
@@ -42,8 +46,20 @@ defmodule Time1.Users do
   Helper function
   Citation: Nat's Notes on the Lens app
   """
-  def get_user_by_name(name) do
-    Repo.get_by(User, name: name)
+  def get_user_by_username(username) do
+    Repo.get_by(User, username: username)
+  end
+
+  @doc """
+  Allows for logon authentication with username, password
+  """
+  def authenticate(username, pass) do
+    user = Repo.get_by(User, username: username)
+
+    case Argon2.check_pass(user, pass) do
+      {:ok, user} -> user
+      _ -> nil
+    end
   end
 
   @doc """

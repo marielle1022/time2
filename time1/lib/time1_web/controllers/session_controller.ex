@@ -11,13 +11,13 @@ defmodule Time1Web.SessionController do
   end
 
   # actually log in
-  def create(conn, %{"name" => name}) do
-    user = Time1.Users.get_user_by_name(name)
+  def create(conn, %{"username" => username, "password" => password}) do
+    user = Time1.Users.authenticate(username, password)
 
     if user do
       conn
       |> put_session(:user_id, user.id)
-      |> put_flash(:info, "Welcome back #{user.name}")
+      |> put_flash(:info, "Welcome back #{user.username}")
       |> redirect(to: Routes.page_path(conn, :index))
     else
       conn

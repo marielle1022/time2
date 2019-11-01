@@ -3,9 +3,23 @@ defmodule Time1Web.UserControllerTest do
 
   alias Time1.Users
 
-  @create_attrs %{manager: "some manager", name: "some name", role: "some role"}
-  @update_attrs %{manager: "some updated manager", name: "some updated name", role: "some updated role"}
-  @invalid_attrs %{manager: nil, name: nil, role: nil}
+  # @create_attrs %{manager: "some manager", name: "some name", role: "some role"}
+  # @update_attrs %{manager: "some updated manager", name: "some updated name", role: "some updated role"}
+  # @invalid_attrs %{manager: nil, name: nil, role: nil}
+
+  @valid_attrs %{
+    username: "some username",
+    name: "some name",
+    role: "some role",
+    manager: "some manager"
+  }
+  @update_attrs %{
+    username: "some updated username",
+    name: "some updated name",
+    role: "some updated role",
+    manager: "some updated manager"
+  }
+  @invalid_attrs %{username: nil, name: nil, role: nil, manager: nil}
 
   def fixture(:user) do
     {:ok, user} = Users.create_user(@create_attrs)
@@ -60,7 +74,7 @@ defmodule Time1Web.UserControllerTest do
       assert redirected_to(conn) == Routes.user_path(conn, :show, user)
 
       conn = get(conn, Routes.user_path(conn, :show, user))
-      assert html_response(conn, 200) =~ "some updated manager"
+      assert html_response(conn, 200) =~ "some updated username"
     end
 
     test "renders errors when data is invalid", %{conn: conn, user: user} do
@@ -75,6 +89,7 @@ defmodule Time1Web.UserControllerTest do
     test "deletes chosen user", %{conn: conn, user: user} do
       conn = delete(conn, Routes.user_path(conn, :delete, user))
       assert redirected_to(conn) == Routes.user_path(conn, :index)
+
       assert_error_sent 404, fn ->
         get(conn, Routes.user_path(conn, :show, user))
       end
