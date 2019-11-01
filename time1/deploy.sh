@@ -14,8 +14,8 @@ mix compile
 mkdir -p priv/static
 (cd assets && npm install)
 # Normal command, but was producing error "webpack command not found"
-#(cd assets && webpack --mode production)
-(cd assets && ./node_modules/.bin/webpack --mode production)
+(cd assets && webpack --mode production)
+#(cd assets && ./node_modules/.bin/webpack --mode production)
 mix phx.digest
 
 # Migrate DB

@@ -6,11 +6,11 @@ Type=simple
 User=timesheet1
 Group=timesheet1
 Restart=on-failure
-Environment=MIX_ENV=prod "PORT=5001"
+Environment=MIX_ENV=prod "PORT=5002"
 Environment=LANG=en_US.UTF-8
 
-WorkingDirectory=/home/timesheet1/time1/time1
-ExecStart=/bin/bash /home/timesheet1/time1/time1/start.sh
+WorkingDirectory=/home/timesheet2/time1/time1
+ExecStart=/bin/bash /home/timesheet2/time1/time1/start.sh
 
 [Install]
 WantedBy=multi-user.target

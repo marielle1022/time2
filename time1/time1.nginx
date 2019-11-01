@@ -1,5 +1,5 @@
 upstream time1_app {
-	server localhost:5001;
+	server localhost:5002;
 }
 
 server {
