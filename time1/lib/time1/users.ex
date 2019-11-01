@@ -36,6 +36,15 @@ defmodule Time1.Users do
 
   """
   def get_user!(id), do: Repo.get!(User, id)
+  def get_user(id), do: Repo.get(User, id)
+
+  @doc """
+  Helper function
+  Citation: Nat's Notes on the Lens app
+  """
+  def get_user_by_name(name) do
+    Repo.get_by(User, name: name)
+  end
 
   @doc """
   Creates a user.
@@ -100,13 +109,5 @@ defmodule Time1.Users do
   """
   def change_user(%User{} = user) do
     User.changeset(user, %{})
-  end
-
-  @doc """
-  Helper function
-  Citation: Nat's Notes on the Lens app
-  """
-  def get_user_by_name(name) do
-    Repo.get_by(User, name: name)
   end
 end

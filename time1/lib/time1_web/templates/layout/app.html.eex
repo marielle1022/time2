@@ -24,17 +24,26 @@
             </li>
           </ul>
         </div>
-      <div class="col-4 text-light">
-        <%= if @current_user do %>
-        User: <%= @current_user.name %>
-        (<%= link("Logout", to: Routes.session_path(@conn, :delete), method: :delete) %>)
-        <% else %>
-          <%= link("Login", to: Routes.session_path(@conn, :new)) %>
+        <div class="col-4 text-light">
+          <%= if @current_user do %>
+          User: <%= @current_user.name %>
+          (<%= link("Logout", to: Routes.session_path(@conn, :delete), method: :delete) %>)
+          <% else %>
+            <%= link("Login", to: Routes.session_path(@conn, :new)) %>
+          <% end %>
+        </div>
+      </nav>
+      <div>
+        <%= if get_flash(@conn, :info) do %>
+          <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info)%></p>
         <% end %>
+        <%= if get_flash(@conn, :error) do %>
+            <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error)%></p>
+        <% end %>
+        <%= render @view_module, @view_template, assigns %>
       </div>
-    </nav>
-      <%= render @view_module, @view_template, assigns %>
     </div>
+    <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>
 <!-- The render shows whatever's in index.html.eex. Citation: Taken largely from Nat's Notes on the Lens app  -->
