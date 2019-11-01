@@ -19,12 +19,12 @@
         </div>
         <div class="col-4">
           <ul class="navbar-nav mr-auto">
-            <%= nav_link(@conn, "Home", Routes.page_path(@conn, :index)) %>
+            <%= link "Home", to: Routes.page_path(@conn, :index), class: "nav-link" %>
             <%= if @current_user do %>
-              <%= nav_link(@conn, "Your Timesheets",
-                Routes.user_path(@conn, :show, @current_user)) %>
+              <%= link "Your Timesheets", to:
+                Routes.user_path(@conn, :show, @current_user), class: "nav-link" %>
             <% end %>
-            <%= nav_link(@conn, "Users", Routes.user_path(@conn, :index)) %>
+            <%= link "Users", to: Routes.user_path(@conn, :index), class: "nav-link" %>
           </ul>
         </div>
         <div class="col-4 text-light">
