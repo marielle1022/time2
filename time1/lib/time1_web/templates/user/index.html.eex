@@ -12,20 +12,20 @@
     </tr>
   </thead>
   <tbody>
-<%= for user <- @users do %>
+  <%= for user <- @users do %>
     <tr>
       <td><%= user.username %></td>
       <td><%= user.name %></td>
       <td><%= user.role %></td>
       <td><%= user.manager %></td>
 
-      <td>
+      <!-- <td>
         <span><%= link "Show", to: Routes.user_path(@conn, :show, user) %></span>
         <span><%= link "Edit", to: Routes.user_path(@conn, :edit, user) %></span>
         <span><%= link "Delete", to: Routes.user_path(@conn, :delete, user), method: :delete, data: [confirm: "Are you sure?"] %></span>
-      </td>
+      </td> -->
     </tr>
-<% end %>
+    <% end %>
   </tbody>
 </table>
 

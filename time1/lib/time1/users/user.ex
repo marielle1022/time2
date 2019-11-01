@@ -24,7 +24,7 @@ defmodule Time1.Users.User do
     |> validate_confirmation(:password)
     |> validate_length(:password, min: 8)
     |> hash_password()
-    |> validate_required([:username, :name, :password_hash])
+    |> validate_required([:username, :password_hash])
   end
 
   def hash_password(cset) do
