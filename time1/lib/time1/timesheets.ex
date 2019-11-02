@@ -17,8 +17,8 @@ defmodule Time1.Timesheets do
       [%Timesheet{}, ...]
 
   """
-  def list_timesheets do
-    Repo.all(Timesheet)
+  def list_timesheets(id) do
+    Timesheet |> where(user_id: ^id) |> Repo.all()
   end
 
   @doc """
