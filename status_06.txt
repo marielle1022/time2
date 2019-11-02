@@ -8,25 +8,27 @@ Answer the following questions:
 
 Marielle Riveros
 
+
 2. What's the URL of the github repo with your work for this HW?
 
+https://github.com/marielle1022/time1
 
 
 3. What's the version number of your github release?
 
-1 (?)
+1 (?) -- master branch
+
 
 4. What's the URL that you deployed to?
-
+time1.mgrathena.info
 
 
 5. Is your app functionality complete? If not, what's missing?
+Not yet. The manager functionality is missing.
 
-Not yet
 
 6. Is your app properly deployed? If not, what went wrong?
-
-No, it keeps getting messed up
+I believe so, but there were a ton of problems with deployment -- I had to create multiple versions to finally figure out how to get it to work.
 
 
 
