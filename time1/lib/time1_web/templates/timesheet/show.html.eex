@@ -55,4 +55,4 @@
 </ul>
 
 <span><%= link "Edit", to: Routes.timesheet_path(@conn, :edit, @timesheet) %></span>
-<span><%= link "View All Timesheets", to: Routes.timesheet_path(@conn, :index) %></span>
+<span><%= link "Back", to: Routes.timesheet_path(@conn, :index) %></span>
