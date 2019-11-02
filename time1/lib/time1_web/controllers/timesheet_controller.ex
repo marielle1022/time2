@@ -9,6 +9,11 @@ defmodule Time1Web.TimesheetController do
     render(conn, "index.html", timesheets: timesheets)
   end
 
+  def current_index(conn, %{"user_id" => user_id}, _params) do
+    timesheets = Timesheets.list_user_timesheets(user_id)
+    render(conn, "index.html", timesheets: timesheets)
+  end
+
   def new(conn, _params) do
     changeset = Timesheets.change_timesheet(%Timesheet{})
     render(conn, "new.html", changeset: changeset)
@@ -28,6 +33,7 @@ defmodule Time1Web.TimesheetController do
     end
   end
 
+  # id -- timesheet id
   def show(conn, %{"id" => id}) do
     timesheet = Timesheets.get_timesheet!(id)
     render(conn, "show.html", timesheet: timesheet)
