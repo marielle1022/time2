@@ -4,15 +4,22 @@ defmodule Time1Web.TimesheetController do
   alias Time1.Timesheets
   alias Time1.Timesheets.Timesheet
 
+  # CHANGE: def index
   def index(conn, _params) do
-    timesheets = Timesheets.list_timesheets()
+    current_user = conn.assigns.current_user
+    timesheets = Timesheets.list_timesheets(current_user.id)
     render(conn, "index.html", timesheets: timesheets)
   end
 
-  def current_index(conn, %{"user_id" => user_id}, _params) do
-    timesheets = Timesheets.list_user_timesheets(user_id)
-    render(conn, "index.html", timesheets: timesheets)
-  end
+  # def index(conn, _params) do
+  #   timesheets = Timesheets.list_timesheets()
+  #   render(conn, "index.html", timesheets: timesheets)
+  # end
+
+  # def current_index(conn, %{"user_id" => user_id}, _params) do
+  #   timesheets = Timesheets.list_user_timesheets(user_id)
+  #   render(conn, "index.html", timesheets: timesheets)
+  # end
 
   def new(conn, _params) do
     changeset = Timesheets.change_timesheet(%Timesheet{})

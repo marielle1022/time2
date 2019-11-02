@@ -17,17 +17,22 @@ defmodule Time1.Timesheets do
       [%Timesheet{}, ...]
 
   """
-  def list_timesheets do
-    Repo.all(Timesheet)
+  # def list_timesheets do
+  #   Repo.all(Timesheet)
+  # end
+
+  def list_timesheets(id) do
+    Timesheet |> where(user_id: ^id) |> Repo.all()
+    # Repo.all(Timesheet)
   end
 
   # Pass in id of current user
   # List timesheets of a given user
   # Citation: (Sneako) https://elixirforum.com/t/how-to-get-all-entries-by-user-id/14522
-  def list_user_timesheets(u_id) do
-    Timesheet |> where(user_id: ^u_id) |> Repo.all()
-    # Repo.all(Timesheet)
-  end
+  # def list_user_timesheets(u_id) do
+  #   Timesheet |> where(user_id: ^u_id) |> Repo.all()
+  #   # Repo.all(Timesheet)
+  # end
 
   @doc """
   Gets a single timesheet.
