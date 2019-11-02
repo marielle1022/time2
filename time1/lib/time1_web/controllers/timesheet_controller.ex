@@ -5,7 +5,8 @@ defmodule Time1Web.TimesheetController do
   alias Time1.Timesheets.Timesheet
 
   def index(conn, _params) do
-    timesheets = Timesheets.list_timesheets()
+    current_user = conn.assigns.current_user
+    timesheets = Timesheets.list_timesheets(current_user.id)
     render(conn, "index.html", timesheets: timesheets)
   end
 
