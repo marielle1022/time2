@@ -2,4 +2,4 @@
 
 <%= render "form.html", Map.put(assigns, :action, Routes.timesheet_path(@conn, :create)) %>
 
-<span><%= link "Back", to: Routes.timesheet_path(@conn, :index) %></span>
+<span><%= link "See All", to: Routes.timesheet_path(@conn, :index) %></span>
