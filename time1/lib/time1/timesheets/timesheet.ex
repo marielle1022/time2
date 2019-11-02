@@ -36,7 +36,7 @@ defmodule Time1.Timesheets.Timesheet do
       :numhours,
       :user_id
     ])
-    |> validate_number(:numhours, less_than: 8)
+    |> validate_number(:numhours, less_than: 9)
     |> validate_required([
       :sheetname,
       :task1,
