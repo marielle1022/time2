@@ -13,32 +13,6 @@
   </head>
   <body>
     <div class="container">
-      <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-        <div class="col-2">
-          <span class="navbar-brand">Timesheet</span>
-        </div>
-        <div class="col-6">
-          <ul class="navbar-nav mr-auto">
-            <%= link "Home", to: Routes.page_path(@conn, :index), class: "nav-link" %>
-            <%= if @current_user do %>
-              <%= link "Your Timesheets", to:
-                Routes.timesheet_path(@conn, :index), class: "nav-link" %>
-              <%= link "New Timesheet", to: Routes.timesheet_path(@conn, :new), class: "nav-link "%>
-            <% end %>
-            <%= link "Users", to: Routes.user_path(@conn, :index), class: "nav-link" %>
-          </ul>
-        </div>
-        <div class="col-5 text-light">
-          <%= if @current_user do %>
-            User: <%= link(@current_user.name,
-              to: Routes.user_path(@conn, :show, @current_user))%>
-            (<%= link("Logout", to: Routes.session_path(@conn, :delete), method: :delete) %>)
-          <% else %>
-            <%= link("Login", to: Routes.session_path(@conn, :new)) %> |
-            <%= link("Register", to: Routes.user_path(@conn, :new))%>
-          <% end %>
-        </div>
-      </nav>
       <div>
         <%= if get_flash(@conn, :info) do %>
           <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info)%></p>

@@ -15,3 +15,12 @@ import "phoenix_html";
 //
 // Local files can be imported directly using relative paths, for example:
 // import socket from "./socket"
+
+// Added for SPA translation
+// Taken from Nat's Notes 16-spa notes
+import init from './page';
+
+window.addEventListener("load", () => {
+  let root = document.getElementById('root');
+  init_page(root);
+});
