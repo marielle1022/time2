@@ -3,14 +3,14 @@ Description=Timesheet 1
 
 [Service]
 Type=simple
-User=timesheet1
-Group=timesheet1
+User=timesheet_spa
+Group=timesheet_spa
 Restart=on-failure
-Environment=MIX_ENV=prod "PORT=5002"
+Environment=MIX_ENV=prod "PORT=5005"
 Environment=LANG=en_US.UTF-8
 
-WorkingDirectory=/home/timesheet2/time1/time1
-ExecStart=/bin/bash /home/timesheet2/time1/time1/start.sh
+WorkingDirectory=/home/timesheet_spa/time1/time1
+ExecStart=/bin/bash /home/timesheet_spa/time1/time1/start.sh
 
 [Install]
 WantedBy=multi-user.target
