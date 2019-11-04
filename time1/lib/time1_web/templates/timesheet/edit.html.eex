@@ -1,5 +1,0 @@
-<h1>Edit Timesheet</h1>
-
-<%= render "form.html", Map.put(assigns, :action, Routes.timesheet_path(@conn, :update, @timesheet)) %>
-
-<span><%= link "See All", to: Routes.timesheet_path(@conn, :index) %></span>
