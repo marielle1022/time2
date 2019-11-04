@@ -32,19 +32,14 @@ defmodule Time1.Timesheets.Timesheet do
       :task6,
       :task7,
       :task8,
-      :numhours
+      :numhours,
+      :user_id
     ])
     |> validate_required([
       :sheetname,
       :task1,
-      :task2,
-      :task3,
-      :task4,
-      :task5,
-      :task6,
-      :task7,
-      :task8,
-      :numhours
+      :numhours,
+      :user_id
     ])
   end
 end

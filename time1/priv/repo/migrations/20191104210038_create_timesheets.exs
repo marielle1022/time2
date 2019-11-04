@@ -1,6 +1,7 @@
 defmodule Time1.Repo.Migrations.CreateTimesheets do
   use Ecto.Migration
 
+  # QUESTION: user_id, create_index
   def change do
     create table(:timesheets) do
       add :sheetname, :string, null: false
@@ -13,9 +14,11 @@ defmodule Time1.Repo.Migrations.CreateTimesheets do
       add :task7, :string
       add :task8, :string
       add :numhours, :integer, null: false
+      add :user_id, references(:users, on_delete: :delete_all), null: false
 
       timestamps()
     end
 
+    create index(:photos, [:user_id])
   end
 end

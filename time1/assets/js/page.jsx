@@ -7,7 +7,7 @@
 // Use path (and React-Router) to decide which components to render.
 
 import React from 'react';
-import ReactDom from 'react-dom';
+import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route, NavLink, Link } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
 

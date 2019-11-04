@@ -10,8 +10,10 @@ defmodule Time1Web.TimesheetView do
     %{data: render_one(timesheet, TimesheetView, "timesheet.json")}
   end
 
+  # QUESTION: uuid?!
   def render("timesheet.json", %{timesheet: timesheet}) do
-    %{id: timesheet.id,
+    %{
+      id: timesheet.id,
       sheetname: timesheet.sheetname,
       task1: timesheet.task1,
       task2: timesheet.task2,
@@ -21,6 +23,8 @@ defmodule Time1Web.TimesheetView do
       task6: timesheet.task6,
       task7: timesheet.task7,
       task8: timesheet.task8,
-      numhours: timesheet.numhours}
+      numhours: timesheet.numhours,
+      uuid: timesheet.uuid
+    }
   end
 end
