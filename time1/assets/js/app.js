@@ -18,7 +18,7 @@ import "phoenix_html";
 
 // Added for SPA translation
 // Taken from Nat's Notes 16-spa notes
-import init from './page';
+import init_page from './page';
 
 window.addEventListener("load", () => {
   let root = document.getElementById('root');

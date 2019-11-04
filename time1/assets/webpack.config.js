@@ -1,10 +1,10 @@
 const path = require('path');
 const glob = require('glob');
-const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = (env, options) => ({
   optimization: {
@@ -39,10 +39,10 @@ module.exports = (env, options) => ({
       {
         test: /\.scss$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
-      }
+      },
     ]
   },
-	devtool: 'cheap-module-source-map',
+	// devtool: 'cheap-module-source-map',
 	resolve: {
 		extensions: ['.js', '.jsx', '.css', '.scss'],
 	},

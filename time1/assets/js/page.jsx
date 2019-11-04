@@ -38,7 +38,7 @@ function Page(props) {
           <h1>Home</h1>
         </Route>
 
-        <Route exact path="users">
+        <Route exact path="/users">
           <h1>Users</h1>
         </Route>
       </Switch>

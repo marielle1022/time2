@@ -2,5 +2,6 @@
 
 // @import "./phoenix.css";
 
-$body-bg: #BBB; // Bootstrap uses scss to override colors, etc.
+// This sets the background color
+$body-bg: #5bc0de; // Bootstrap uses scss to override colors, etc.
 @import "~bootstrap/scss/bootstrap";
