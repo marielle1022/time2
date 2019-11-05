@@ -1,6 +1,8 @@
 alias Time1.Repo
 alias Time1.Users.User
 
+pw = Argon2.hash_pwd_salt("test")
+
 Repo.insert!(%User{
   name: "Alice",
   username: "Alice1995",
