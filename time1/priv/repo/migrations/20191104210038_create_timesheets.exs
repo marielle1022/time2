@@ -19,6 +19,6 @@ defmodule Time1.Repo.Migrations.CreateTimesheets do
       timestamps()
     end
 
-    create index(:photos, [:user_id])
+    create index(:timesheets, [:user_id])
   end
 end
