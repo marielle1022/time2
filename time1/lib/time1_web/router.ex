@@ -27,7 +27,8 @@ defmodule Time1Web.Router do
 
     resources "/users", UserController, except: [:new, :edit]
     resources "/timehseets", TimesheetController, except: [:new, :edit]
-    get "/timesheets/:id", TimesheetController, :file
+    # QUESTION: is this used (below)? Commented out on time1 version
+    get "/timesheets/:id/show", TimesheetController, :show
   end
 
   scope "/", Time1Web do
