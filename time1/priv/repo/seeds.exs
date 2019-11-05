@@ -1,8 +1,15 @@
 alias Time1.Repo
 alias Time1.Users.User
 
-Repo.insert!(%User{name: "Alice", username: "Alice1995", role: "worker", manager: "Bobbi"})
-Repo.insert!(%User{name: "Bobbi", username: "Bobbi2000", role: "manager"})
+Repo.insert!(%User{
+  name: "Alice",
+  username: "Alice1995",
+  role: "worker",
+  manager: "Bobbi",
+  password_hash: pw
+})
+
+Repo.insert!(%User{name: "Bobbi", username: "Bobbi2000", role: "manager", password_hash: pw})
 # Script for populating the database. You can run it as:
 #
 #     mix run priv/repo/seeds.exs
