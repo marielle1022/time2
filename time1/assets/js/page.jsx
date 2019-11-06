@@ -14,9 +14,17 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route, NavLink, Link } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
 import TimesheetsNew from './timesheets/new';
+import { Provider, connect } from 'react-redux';
+
+import store from './store';
 
 export default function init_page(root) {
-  ReactDOM.render(<Page />, root);
+  let tree = (
+    <Provider store={store}>
+      <Page />
+    </Provider>
+  );
+  ReactDOM.render(tree, root);
 }
 
 function Page(props) {
