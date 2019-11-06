@@ -5,6 +5,9 @@ Design Decisions:
        * When registering for an account, users specify their role (manager/worker)
        * This information is stored under "role" in the user table
        * This allows for a simpler registration
+  * Used drop-down menus for job codes
+       * This restricts users to specific job codes
+       * No ambiguity is allowed
 
 
 ## Phoenix Information
