@@ -2,9 +2,9 @@
 
 Design Decisions:
   * Created a single database for users which includes both managers and workers
-  ** When registering for an account, users specify their role (manager/worker)
-  ** This information is stored under "role" in the user table
-  ** This allows for a simpler registration
+   * When registering for an account, users specify their role (manager/worker)
+   * This information is stored under "role" in the user table
+   * This allows for a simpler registration
 
 
 ## Phoenix Information
