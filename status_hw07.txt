@@ -14,11 +14,11 @@ https://github.com/marielle1022/time1
 
 3. What's the version number of your github release?
 
-Unclear on what this is on github -- most recent commit is "status page 7 update"
+Unclear on what this is on github -- most recent commit is "status 7 update"
 
 4. What's the URL that you deployed to?
 
-time2.mgrathena.info
+time02.mgrathena.info
 
 5. Is your app functionality complete? If not, what's missing?
 No -- it's hard to tell what might be working or not because the "state.session is null" error leads to a blank page.
@@ -26,7 +26,7 @@ I know that I was definitely able to create a timesheet with drop-down menus of 
 
 
 6. Is your app properly deployed? If not, what went wrong?
-A previous version is properly deployed. For some reason, I'm unable to redeploy the updated version -- it simply redeploys with the same old version.
+Yes.
 
 
 
