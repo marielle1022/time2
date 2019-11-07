@@ -26,7 +26,7 @@ I know that I was definitely able to create a timesheet with drop-down menus of 
 
 
 6. Is your app properly deployed? If not, what went wrong?
-Yes.
+A previous version is properly deployed. For some reason, I'm unable to redeploy the updated version -- it simply redeploys with the same old version.
 
 
 
