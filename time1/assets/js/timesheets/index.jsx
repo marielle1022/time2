@@ -13,19 +13,19 @@ import { list_timesheets } from '../ajax';
 // import PhotoCard from './card';
 
 let TimesheetsList = connect(({timesheets}) => ({timesheets}))(({timesheets}) => {
-  // if (photos.size == 0) {
+  if (timesheets.size == 0) {
     list_timesheets();
-  // }
+  }
 
-  // let cards = _.map([...photos], ([_, photo]) => {
-  //   return <PhotoCard key={photo.id} photo={photo} />;
-  // });
+  let cards = _.map([...timesheets], ([_, timesheet]) => {
+    return <TimesheetCard key={timesheet.id} timesheet={timesheet} />;
+  });
 
   return (
     <div>
       <h1>Timesheets</h1>
       <div className="row">
-        {timesheets}
+        {cards}
       </div>
     </div>
   );

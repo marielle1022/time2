@@ -99,7 +99,7 @@ export function submit_new_timesheet(form) {
       }
       else {
         store.dispatch({
-          type: 'CHANGE_NEW_PHOTO',
+          type: 'CHANGE_NEW_TIMESHEET',
           data: {errors: JSON.stringify(resp.errors)},
         });
       }

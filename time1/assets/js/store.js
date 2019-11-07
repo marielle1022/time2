@@ -90,6 +90,8 @@ function session(st0 = session0, action) {
 //QUESTION: root_reducer?!?!
 // forms, users, timesheets -- all refer to functions above
 function root_reducer(st0, action) {
+  console.log("st0", st0);
+  console.log("action", action);
   console.log("root_reducer", st0, action);
   let reducer = combineReducers({
     forms,
