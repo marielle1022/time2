@@ -101,4 +101,14 @@ defmodule Time1.Users do
   def change_user(%User{} = user) do
     User.changeset(user, %{})
   end
+
+  # Question: username or user_name?
+  def authenticate_user(username, password) do
+    user = Repo.get_by(User, username: username)
+
+    case Argon2.check_pass(user, password) do
+      {:ok, user} -> user
+      _else -> nil
+    end
+  end
 end

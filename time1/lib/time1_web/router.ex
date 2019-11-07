@@ -27,8 +27,9 @@ defmodule Time1Web.Router do
 
     resources "/users", UserController, except: [:new, :edit]
     resources "/timesheets", TimesheetController, except: [:new, :edit]
-    # QUESTION: is this used (below)? Commented out on time1 version
+    # QUESTION: is this used (get ttimesheets..., below)? Commented out on time1 version
     get "/timesheets/:id/show", TimesheetController, :show
+    resources "/sessions", SessionController, only: [:create], singleton: true
   end
 
   scope "/", Time1Web do

@@ -36,9 +36,19 @@ function new_timesheet(st0 = {sheetname: "", errors: null}, action) {
   }
 }
 
+function login(st0 = {username: "", password: "", errors: null}, action) {
+  switch(action.type) {
+    case 'CHANGE_LOGIN':
+      return Object.assign({}, st0, action.data);
+    default:
+      return st0;
+  }
+}
+
 function forms(st0, action) {
   let reducer = combineReducers({
     new_timesheet,
+    login,
   });
   return reducer(st0, action);
 }
@@ -59,7 +69,22 @@ function timesheets(st0 = new Map(), action) {
     return st1;
   default:
     return st0;
+  }
 }
+
+let session0 = localStorage.getItem('session');
+if (session0) {
+  session0 = JSON.parse(session0);
+}
+function session(st0 = session0, action) {
+  switch (action.type) {
+    case 'LOG_IN':
+      return action.data;
+    case 'LOG_OUT':
+      return null;
+    default:
+      return st0;
+  }
 }
 
 //QUESTION: root_reducer?!?!
@@ -70,6 +95,7 @@ function root_reducer(st0, action) {
     forms,
     users,
     timesheets,
+    session,
   });
   return deepFreeze(reducer(st0, action));
 }
