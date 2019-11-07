@@ -40,12 +40,24 @@ class TimesheetsNew extends React.Component {
     this.setState({redirct: path});
   }
 
+  // BIG question: "changed" needed here, or needed just for files?
+  // Seems to be re: whether can navigate away from something in-progress or
+  // not -- but if so, how does this fit in w/ render?
   // Question: check params?!
   changed(data) {
     this.props.dispatch({
       type: 'CHANGE_NEW_TIMESHEET',
-      data: data
+      data: data,
     });
+  }
+
+  timesheet_changed(ev) {
+    let input = ev.target;
+    let timesheet = null;
+    // Question: include this somehow? What is this doing?
+    // if (input.files.length > 0) {
+    //   file = input.files[0]; }
+    this.changed({timesheet: timesheet});
   }
 
   // Question: from notes -- not needed b/c no file? Or needed so user can
@@ -86,7 +98,8 @@ class TimesheetsNew extends React.Component {
 
 // Question: file_changed in form control?
 render() {
-  let {errors, dispatch} = this.props;
+  // Question: what "params" to put here? (other than errors, dispatch)
+  let {timesheet, errors, dispatch} = this.props;
   let error_msg = null;
   if (errors) {
     error_msg = <Alert variant="danger">{ errors }</Alert>;
@@ -100,6 +113,7 @@ render() {
   return (
     <div>
       <h1>New Timesheet</h1>
+      { error_msg }
       <Form.Group controlId="date">
         <Form.Label>Date</Form.Label>
         <Form.Control as="input">

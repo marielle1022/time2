@@ -2,6 +2,9 @@ defmodule Time1.Users.User do
   use Ecto.Schema
   import Ecto.Changeset
 
+  # QUESTION: Is it better to have separate manager database?
+  # manager = has_many workers (?)
+
   schema "users" do
     field :manager, :string
     field :name, :string

@@ -1,7 +1,7 @@
 // Much taken from Nat's Notes 16-spa
 
-import { createStore, combineReducers} from 'redux';
-import deepFreeze from deep-freeze-strict;
+import { createStore, combineReducers } from 'redux';
+import deepFreeze from 'deep-freeze-strict';
 
 /* Structure of store data:
 NB: is password_hash right in user?
@@ -24,10 +24,10 @@ NB: Is id right in timesheets (compared to user_id)?
 }
 */
 
-// NB: should "sheetname" really be some sort of unique timesheet id?
+// Question: should "sheetname" really be some sort of unique timesheet id?
 // Need to look at structure of database tables
 // What to put in {} in new_timesheet params?
-function new_timesheet(st0 = {}, action) {
+function new_timesheet(st0 = {sheetname: "", errors: null}, action) {
   switch (action.type) {
     case 'CHANGE_NEW_TIMESHEET':
       return Object.assigns({}, st0, action.data);
@@ -43,10 +43,27 @@ function forms(st0, action) {
   return reducer(st0, action);
 }
 
-function users(st0 = Map.new(), action) {
+function users(st0 = new Map(), action) {
   return st0;
 }
 
+// Question: What to use instead of data? Or is data here referring to something
+// other than photo data?
+function timesheets(st0 = new Map(), action) {
+  switch (action.type) {
+  case 'ADD_TIMESHEETS':
+    let st1 = new Map(st0);
+    for (let timesheet of action.data) {
+      st1.set(timesheet.id, timesheet);
+    }
+    return st1;
+  default:
+    return st0;
+}
+}
+
+//QUESTION: root_reducer?!?!
+// forms, users, timesheets -- all refer to functions above
 function root_reducer(st0, action) {
   console.log("root_reducer", st0, action);
   let reducer = combineReducers({

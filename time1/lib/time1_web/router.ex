@@ -26,7 +26,7 @@ defmodule Time1Web.Router do
     pipe_through :ajax
 
     resources "/users", UserController, except: [:new, :edit]
-    resources "/timehseets", TimesheetController, except: [:new, :edit]
+    resources "/timesheets", TimesheetController, except: [:new, :edit]
     # QUESTION: is this used (below)? Commented out on time1 version
     get "/timesheets/:id/show", TimesheetController, :show
   end

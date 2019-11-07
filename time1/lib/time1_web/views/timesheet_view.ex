@@ -24,7 +24,7 @@ defmodule Time1Web.TimesheetView do
       task7: timesheet.task7,
       task8: timesheet.task8,
       numhours: timesheet.numhours,
-      uuid: timesheet.uuid
+      user_id: timesheet.user_id
     }
   end
 end

@@ -27,3 +27,4 @@
   </body>
 </html>
 <!-- The render shows whatever's in index.html.eex. Citation: Taken largely from Nat's Notes on the Lens app  -->
+<!-- QUESTION: should /js/app.js be in single or double quotes? -->
