@@ -83,7 +83,7 @@ function session(st0 = session0, action) {
     case 'LOG_OUT':
       return null;
     default:
-      return st0;
+      return {};
   }
 }
 
